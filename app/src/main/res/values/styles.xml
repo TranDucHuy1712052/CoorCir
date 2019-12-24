@@ -8,4 +8,47 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+
+    <!--    CUSTOM BUTTON VIEWS   -->
+    <style name="ButtonTransparent" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textColor">#131313</item>
+        <item name="android:background">@drawable/button_transparent</item>
+        <item name="android:height">20dp</item>
+        <item name="android:width">140dp</item>
+
+<!--        <item name="android:fontFamily">montserrat-medium</item>-->
+        <item name="android:letterSpacing">0.985</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+    <style name="ButtonBlack" parent="ButtonTransparent">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/button_black</item>
+    </style>
+
+    <!-- ###################################################  -->
+
+
+    <!--    CUSTOM EDIT TEXT VIEWS -->
+    <style name="TextBox" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/textbox_background</item>
+
+        <item name="android:height">20dp</item>
+        <item name="android:width">200dp</item>
+
+        <item name="android:letterSpacing">0.985</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColorHint">#B4B4B4</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!-- ###################################################  -->
+
+
+
+
+
 </resources>
