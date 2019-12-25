@@ -6,44 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".SignInActivity">
 
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_view_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_launcher_background"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        />
+
+
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/img_view_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:hint="username"
+        android:inputType="text"
+        style="@style/TextBox"
+        android:id="@+id/edit_text_username"
+        />
+
+    <EditText
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/edit_text_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:hint="password"
+        android:inputType="textPassword"
+        style="@style/TextBox"
+        android:id="@+id/edit_text_password"
+        />
+
+
+
     <Button
-        style="@style/ButtonTransparent"
+        style="@style/ButtonBlack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Click Me"
-        android:id="@+id/btn_test_transparent"
+        android:layout_below="@id/edit_text_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="Let me in"
+        android:id="@+id/btn_login"
         />
 
     <Button
         style="@style/ButtonBlack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_test_transparent"
+        android:layout_below="@id/btn_login"
         android:layout_centerHorizontal="true"
-        android:layout_margin="30dp"
-        android:text="Click Me"
-        android:id="@+id/btn_test_black"
+        android:layout_marginTop="20dp"
+        android:text="I'm new"
+        android:id="@+id/btn_signup"
+
         />
 
-
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_test_black"
+        android:layout_below="@id/btn_signup"
         android:layout_centerHorizontal="true"
-        android:layout_margin="30dp"
-        android:hint="TextBox"
-        android:inputType="text"
-        style="@style/TextBox"
-        />
+        android:layout_marginTop="5dp"
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:src="@drawable/ic_launcher_background"
-        app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"/>
+        android:text="Forgot your password??"
+        android:textColor="#0786E2"
+        android:textStyle="bold"
+        android:id="@+id/text_view_forgot_password"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="170dp"
+        android:layout_height="1dp"
+        android:background="#0786E2"
+        android:layout_below="@id/text_view_forgot_password"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>
