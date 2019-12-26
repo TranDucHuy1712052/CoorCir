@@ -1,6 +1,6 @@
 package hcmus.cnpm.team10.utils.bar_handler;
 
-import android.app.ActionBar;
+import androidx.appcompat.app.ActionBar;
 import android.view.View;
 
 
@@ -14,7 +14,7 @@ public class ActionBarQuickSetUp {
 
     private static final int DEFAULT_BAR_VIEW_ID = R.layout.bar_default;
     public static void setUpBar(AppCompatActivity activity, IBarHandler handler){
-        ActionBar actionBar = activity.getActionBar();
+        androidx.appcompat.app.ActionBar actionBar = activity.getSupportActionBar();
 
         assert actionBar != null;
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
