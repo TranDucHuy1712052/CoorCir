@@ -85,11 +85,13 @@ public class SignInActivity extends AppCompatActivity {
                         parameters.put("usr", getUsername());
                         parameters.put("p", getPasword());
 
-                        Intent intent = new Intent(getBaseContext(), APIService.class);
-                        intent.setAction(Constants.LOGIN_ACTION);
-                        intent.putExtra("query", Constants.LOGIN_QUERY);
-                        intent.putExtra("parameters", parameters);
+//                        Intent intent = new Intent(getBaseContext(), APIService.class);
+//                        intent.setAction(Constants.LOGIN_ACTION);
+//                        intent.putExtra("query", Constants.LOGIN_QUERY);
+//                        intent.putExtra("parameters", parameters);
 
+                        Intent intent = APIService.createIntent(getBaseContext(), Constants.LOGIN_ACTION,
+                                Constants.LOGIN_QUERY, parameters);
                         startService(intent);
                         mReceiver.dialog.show();
 
