@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="Full Name"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            style="@style/TextBox"
+            android:layout_marginTop="5dp"
+            android:hint="Nguyen Van A"
+            android:id="@+id/edit_text_fullname"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="Username"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            style="@style/TextBox"
+            android:layout_marginTop="5dp"
+            android:hint="nguyenvana"
+            android:id="@+id/edit_text_username"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="Phone"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            style="@style/TextBox"
+            android:layout_marginTop="5dp"
+            android:hint="0123456789"
+            android:inputType="numberDecimal"
+            android:id="@+id/edit_text_phone"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="Password"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            style="@style/TextBox"
+            android:layout_marginTop="5dp"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:id="@+id/edit_text_password"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="Password Retype"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            style="@style/TextBox"
+            android:layout_marginTop="5dp"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:id="@+id/edit_text_password_retype"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp">
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_btn_agree_cond"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I agree to the Terms of Service and Privacy Policy"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        >
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/ButtonBlack"
+        android:text="Sign Up"
+        android:layout_centerHorizontal="true"
+        />
+    </RelativeLayout>
+
+</LinearLayout>
