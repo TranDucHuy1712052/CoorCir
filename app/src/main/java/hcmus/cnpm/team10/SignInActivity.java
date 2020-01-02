@@ -1,6 +1,7 @@
 package hcmus.cnpm.team10;
 
 import androidx.appcompat.app.AppCompatActivity;
+import hcmus.cnpm.team10.user.CurrentUser;
 import hcmus.cnpm.team10.utils.api.APIService;
 import hcmus.cnpm.team10.utils.api.HttpHandler;
 
@@ -43,10 +44,17 @@ public class SignInActivity extends AppCompatActivity {
             if (result.equals(hcmus.cnpm.team10.utils.api.Constants.EMPTY_TOKEN)
             || result.equals("-1"))
                 Toast.makeText(getBaseContext(), "Login fail", Toast.LENGTH_LONG).show();
-            else
+            else{
                 Toast.makeText(getBaseContext(), result, Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getBaseContext(), CircleChoosingActivity.class);
+                i.putExtra("uid", result);
+                CurrentUser.setUserId(result);
+                dialog.cancel();
+                startActivity(i);
+            }
 
-            dialog.cancel();
+            if(dialog.isShowing())
+                dialog.cancel();
         }
     }
 
