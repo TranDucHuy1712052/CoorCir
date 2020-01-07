@@ -65,7 +65,7 @@ public class CircleListAdapter extends ArrayAdapter<Circle> {
                 case 4: imageViewId = R.id.image_view_user4; break;
             }
             ImageView avatarView = convertView.findViewById(imageViewId);
-            avatarView.setImageDrawable(circleMembers.get(i).getAvatar(getContext()));
+            avatarView.setImageDrawable(circleMembers.get(i - 1).getAvatar(getContext()));
 
         }
 

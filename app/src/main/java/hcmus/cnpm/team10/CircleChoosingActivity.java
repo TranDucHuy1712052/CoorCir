@@ -1,5 +1,6 @@
 package hcmus.cnpm.team10;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import hcmus.cnpm.team10.circle.Circle;
 import hcmus.cnpm.team10.circle.CircleListAdapter;
@@ -13,6 +14,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -66,6 +69,7 @@ public class CircleChoosingActivity extends AppCompatActivity {
 
     private CircleListAdapter mAdapter;
     private CircleDownloadReceiver mReceiver;
+    private static final int JOIN_CIRCLE_REQUEST = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,12 +93,41 @@ public class CircleChoosingActivity extends AppCompatActivity {
         mReceiver.dialog.show();
 
 
+        Button btnJoinCircle = findViewById(R.id.btn_join_circle);
+        btnJoinCircle.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent startJoin = new Intent(getBaseContext(), JoinCircleActivity.class);
+                        startActivityForResult(
+                                startJoin,
+                                JOIN_CIRCLE_REQUEST
+                        );
+
+                    }
+                }
+        );
+
+
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         unregisterReceiver(mReceiver);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == JOIN_CIRCLE_REQUEST){
+            if(resultCode == RESULT_OK){
+                String cid = data.getStringExtra("circleId");
+                Circle c = (Circle) data.getSerializableExtra("circle");
+                mAdapter.addCircle(c);
+                mAdapter.notifyDataSetChanged();
+            }
+        }
     }
 
     @Override
@@ -124,7 +157,7 @@ public class CircleChoosingActivity extends AppCompatActivity {
         );
 
         for (int i = 0; i < 5; i++)
-            c1.addUser(new User());
+            c1.addUser(new User("1712060"));
 
         circles.add(c1);
 

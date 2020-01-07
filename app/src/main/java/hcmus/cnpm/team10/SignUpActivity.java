@@ -41,8 +41,10 @@ public class SignUpActivity extends AppCompatActivity {
 
             String result = intent.getStringExtra("result");
             if (result.equals(hcmus.cnpm.team10.utils.api.Constants.EMPTY_TOKEN)
-                    || result.equals("-1"))
+                    || result.equals("-1")){
                 Toast.makeText(getBaseContext(), "Signup fail", Toast.LENGTH_LONG).show();
+                Log.e(this.getClass().toString(), result);
+            }
             else
                 Toast.makeText(getBaseContext(), result, Toast.LENGTH_LONG).show();
 
@@ -72,7 +74,7 @@ public class SignUpActivity extends AppCompatActivity {
                         // Quick check
                         // Check Radio
                         RadioButton radioBtn = findViewById(R.id.radio_btn_agree_cond);
-                        if(!radioBtn.isActivated()){
+                        if(!radioBtn.isChecked()){
                             Toast.makeText(getBaseContext(), "You haven't agree to our term and service yet", Toast.LENGTH_LONG).show();
                             return;
                         }
@@ -90,11 +92,13 @@ public class SignUpActivity extends AppCompatActivity {
                         String username = getStringFromEditText(R.id.edit_text_username);
                         String phone = getStringFromEditText(R.id.edit_text_phone);
                         String fullname = getStringFromEditText(R.id.edit_text_fullname);
+//                        fullname = fullname.replace(" ", "+");
 
-                        HashMap<String, String> parameters = new HashMap<>(3);
+                        HashMap<String, String> parameters = new HashMap<>(4);
                         parameters.put("fn", fullname);
                         parameters.put("phn", phone);
                         parameters.put("usr", username);
+                        parameters.put("p", password);
 
                         if(!isValidParameters(parameters))
                             return;
@@ -119,7 +123,11 @@ public class SignUpActivity extends AppCompatActivity {
                                 return false;
                             }
 
-                        //
+                        // Check maximum length of query
+                        if(parameters.get("p").length() > 45){
+                            Toast.makeText(getBaseContext(), "Password is too long", Toast.LENGTH_LONG).show();
+                            return false;
+                        }
 
 
                         return true;
@@ -131,7 +139,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void setUpActionBar(String title){
-        int backImgId = R.drawable.ic_launcher_background;
+        int backImgId = android.R.drawable.ic_menu_revert;
         View.OnClickListener leftListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {

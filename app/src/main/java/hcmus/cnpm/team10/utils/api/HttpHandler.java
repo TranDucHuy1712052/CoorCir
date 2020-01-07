@@ -1,6 +1,8 @@
 package hcmus.cnpm.team10.utils.api;
 
 
+import android.util.Log;
+
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
@@ -16,8 +18,8 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class HttpHandler {
 
-    private static final String ROOT_URL     = "https://cnpm-t10-testserver-1.herokuapp.com";
-//    private static final String ROOT_URL = "http://192.168.9.54:3000";
+//    private static final String ROOT_URL     = "https://cnpm-t10-testserver-1.herokuapp.com";
+    private static final String ROOT_URL = "http://10.10.169.56:3000";
     private static final int    DEFAULT_PORT = 3000;
 
     private class HandleConnection {
@@ -27,6 +29,7 @@ public class HttpHandler {
 
         HandleConnection(URL url) throws IOException {
             if(url.getProtocol().equals("https")){
+                Log.i(this.getClass().toString(), "Detected https");
                 isHttps = true;
                 mHttpsConnection = (HttpsURLConnection) url.openConnection();
                 mHttpConnection = null;
