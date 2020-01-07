@@ -2,6 +2,7 @@ package hcmus.cnpm.team10.utils.api;
 
 import android.app.IntentService;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
@@ -51,5 +52,17 @@ public class APIService extends IntentService {
         Log.i(this.getClass().toString(), "Run Success");
 
         sendBroadcast(ans_intent);
+    }
+
+
+
+    public static Intent createIntent(Context context, String action, String query, HashMap<String, String> parameters){
+        Intent intent = new Intent(context, APIService.class);
+        intent.setAction(action);
+        intent.putExtra("query", query);
+        intent.putExtra("parameters", parameters);
+
+        return intent;
+
     }
 }

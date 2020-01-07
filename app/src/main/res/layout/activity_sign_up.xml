@@ -179,6 +179,7 @@
         style="@style/ButtonBlack"
         android:text="Sign Up"
         android:layout_centerHorizontal="true"
+        android:id="@+id/btn_signup"
         />
     </RelativeLayout>
 
